@@ -11,12 +11,18 @@
     <meta name="Description" content="">
     <meta name="Keywords" content="面试">
     <title>面试</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
 
 <body>
     <div class="header">
         <div class="h-tip">
-            <a href="#" target="_blank">公告:办理会员五折起</a>
+            <div class="h-tip-wrapper">
+                <a href="#" target="_blank" class="active">公告:办理会员五折起1</a>
+                <a href="#" target="_blank">公告:办理会员五折起2</a>
+                <a href="#" target="_blank">公告:办理会员五折起3</a>
+            </div>
         </div>
         <div class="h-nav">
             <h1>
@@ -54,30 +60,130 @@
     </div>
     <div class="content">
         <div class="c-classification">
-            <div class="c-classification-wrapper">
-                <div class="cl-title">
-                    <h2>分类</h2>
-                    <p>classification</p>
-                </div>
-                <div class="cl-content">
-                    <ul class="cl-co-title">
-                        <li>花瓣</li>
-                        <li>冬天</li>
-                        <li>雪景</li>
-                        <li>秋天</li>
-                    </ul>
-                    <div class="cl-co-pictures">
-                        <div class="pic-top">
-                            <a href="#">
-                                <img src="" alt="花" width="" height="">
-                            </a>
-                        </div>
+
+            <div class="cl-title">
+                <h2>分类</h2>
+                <p>classification</p>
+            </div>
+            <div class="cl-content">
+                <ul class="cl-co-title">
+                    <li>花瓣</li>
+                    <li>冬天</li>
+                    <li>雪景</li>
+                    <li>秋天</li>
+                </ul>
+                <div class="cl-co-pictures">
+                    <div class="pic-top">
+                        <a href="#">
+                            <img src="./img/content/classification/pic-flower-1.webp" alt="花" width="578" height="285">
+                        </a>
+                        <a href="#">
+                            <img src="./img/content/classification/pic-flower-2.webp" alt="花" width="309" height="285">
+                        </a>
+                        <a href="#">
+                            <img src="./img/content/classification/pic-flower-3.webp" alt="花" width="380" height="285">
+                        </a>
                     </div>
+                    <div class="pic-down">
+                        <a href="#">
+                            <img src="./img/content/classification/pic-flower-4.webp" alt="花" width="372" height="285">
+                        </a>
+                        <a href="#">
+                            <img src="./img/content/classification/pic-flower-5.webp" alt="花" width="272" height="285">
+                        </a>
+                        <a href="#">
+                            <img src="./img/content/classification/pic-flower-6.webp" alt="花" width="606" height="285">
+                        </a>
+                    </div>
+                    <div class="pic-right">
+                        <a href="#">
+                            <img src="./img/content/classification/pic-flower-7.webp" alt="花" width="151" height="302">
+                        </a>
+                    </div>
+                    <div class="pic-more">
+                        <i></i>
+                        <a href="#">查看更多</a>
+                        <i></i>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="c-featured">
+            <div class="fe-title">
+                <h2>精选</h2>
+                <p>featured</p>
+            </div>
+            <div class="fe-content">
+
+            </div>
+        </div>
+        <div class="c-about">
+            <div class="ab-title">
+                <h2>关于我们</h2>
+                <p>about us</p>
+            </div>
+            <div class="ab-content">
+                <div class="ab-co-left">
+
+                </div>
+                <div class="ab-co-right">
+                    <h3>我们的介绍</h3>
+                    <p>XXX网站是中国免费素材最多的网站之一，拥有800多万张免费素材。提供：矢量图、psd源文件、图片素材、网页素材、3D模型素材、手机APP素材、ppt、画册、图标热门主流素材免费下载服务，XXX以其独特的定位和全新免费运营模式，处于素材网站领先位置。</p>
+                    <a href="#">查看更多</a>
                 </div>
             </div>
         </div>
+        <div class="c-advantage">
+            <ul class="ad-list">
+                <li>
+                    <i></i>
+                    <span>100%正版</span>
+                </li>
+                <li>
+                    <i></i>
+                    <span>价格低廉</span>
+                </li>
+                <li>
+                    <i></i>
+                    <span>海量图库</span>
+                </li>
+                <li>
+                    <i></i>
+                    <span>发票支持</span>
+                </li>
+            </ul>
+        </div>
     </div>
-    <script src="./scripts/prefixFree.js"></script>
+    <div class="footer">
+        <div class="f-wrapper">
+            <a href="#" class="f-logo">
+                <img src="./img/header/logo.webp" alt="logo" width="206" height="117">
+            </a>
+            <div class="f-question">
+                <a href="#">关于我们</a>
+                <a href="#">价格体系</a>
+                <a href="#">服务条款</a>
+                <a href="#">联系我们</a>
+                <a href="#">版权说明</a>
+                <a href="#">常见问题</a>
+            </div>
+            <div class="f-connect">
+                <div class="f-co-QR">
+                    <img src="./img/footer/QR.png" alt="二维码" width="280" height="280">
+                </div>
+                <div class="f-co-contact">
+                    <h5>在线客服</h5>
+                    <p>400-26441</p>
+                    <p>461131654@qq.com</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="./scripts/jquery-3.3.1.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>
