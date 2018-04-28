@@ -2,6 +2,7 @@
 
     $(function() {
         switchTip();
+        tabShow();
     });
     //公告轮播
     function switchTip() {
@@ -23,5 +24,17 @@
             autoPlay();
         });
 
+    }
+
+    //分类展示
+    function tabShow() {
+        var pics = $('.cl-co-pictures .item');
+        $('.cl-content .cl-co-title li').on('click', function() {
+            var $this = $(this);
+            var index = $this.index();
+
+            $this.addClass('active').siblings().removeClass('active');
+            pics.eq(index).addClass('active').siblings().removeClass('active');
+        });
     }
 })(jQuery);
