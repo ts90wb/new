@@ -38,29 +38,31 @@ body {
     height: 100%;
 }
 
-.h-slider .si-pagination {
+.header .h-pagination {
     display: flex;
     position: absolute;
     bottom: 2rem;
     width: 100%;
     height: .51rem;
     justify-content: center;
-    align-items: baseline;
+    align-items: flex-end;
 }
 
-.h-slider .si-pagination li {
+.h-pagination li {
     width: .16rem;
     height: .16rem;
     margin-right: .26rem;
     border-radius: .16rem;
     background: #fff;
+    cursor: pointer;
 }
 
-.h-slider .si-pagination li.active {
+.h-pagination li.active {
     height: 100%;
+    transition: height .3s;
 }
 
-.h-slider .si-pagination li:nth-child(4) {
+.h-pagination li:nth-child(4) {
     margin-right: 0;
 }
 
@@ -356,6 +358,7 @@ body {
 }
 
 .c-featured {
+    position: relative;
     width: 100%;
     margin: .25rem 0 1.4rem 0;
 }
@@ -379,15 +382,45 @@ body {
     margin: 0 auto;
 }
 
-.c-featured .fe-content {
+.c-featured .wrapper {
+    position: absolute;
+    top: 2.19rem;
+    left: 50%;
+    transform: translateX(-50%);
     width: 12rem;
+    height: 12rem;
+    overflow: hidden;
+}
+
+.c-featured .fe-content {
+    position: absolute;
+    top: .87rem;
+    left: 0;
+    width: 12rem;
+    height: 10.92rem;
+}
+
+.c-featured .fe-gap {
+    width: 12rem;
+    height: 10.92rem;
     margin: .03rem auto 0;
 }
 
 .fe-content .co-slider {
+    position: absolute;
     display: flex;
     height: 10.22rem;
+}
+
+.fe-content .co-slider .item-wrapper {
+    display: flex;
+    width: 12rem;
+    height: 100%;
     justify-content: space-between;
+}
+
+.fe-content .co-slider .item-wrapper:nth-child(1) {
+    margin-right: .525rem;
 }
 
 .fe-content .co-slider .sl-column {
@@ -399,6 +432,7 @@ body {
 .fe-content .co-slider .sl-column.active {
     transform: translateY(-.84rem);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .2), -1px -1px 3px rgba(0, 0, 0, .2);
+    transition: all .5s ease-in-out;
 }
 
 .fe-content .co-slider .sl-column a {
@@ -450,11 +484,13 @@ body {
 }
 
 .fe-content .co-pagination {
+    position: absolute;
+    bottom: 0;
     display: flex;
     width: 100%;
     height: .51rem;
     padding-top: .18rem;
-    align-items: baseline;
+    align-items: flex-end;
     justify-content: center;
 }
 
@@ -472,6 +508,7 @@ body {
 
 .fe-content .co-pagination li.active {
     height: .51rem;
+    transform: height .5s;
 }
 
 .c-about {
