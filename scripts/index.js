@@ -1,11 +1,21 @@
 (function($) {
 
     $(function() {
+        initFont();
+        $(window).resize(function() {
+            initFont();
+        });
         switchTip();
         tabShow();
         primarySlider();
         featuredSlider();
     });
+    //初始化字体
+    function initFont() {
+        var _html = $('html'),
+            view_width = _html.width();
+        view_width > 768 ? _html.css('font-size', view_width / 19.2 + 'px') : null;
+    }
     //公告轮播
     function switchTip() {
         var $link = $('.pr-top .pr-top-tip .tip-wrapper a');
@@ -33,8 +43,8 @@
             $cLi = $('.h-slider .si-container li'),
             $pLi = $('.h-pagination li');
         var index = 0,
-            pIndex;
-        var timer;
+            pIndex,
+            timer;
 
         function autoPlay() {
             timer = setInterval(function() {
