@@ -76,35 +76,60 @@
     }
     //精选区域轮播
     function featuredSlider() {
+        var $sliWrapper = $('.c-featured .wrapper');
         var $slider = $('.fe-content .co-slider');
         var $li = $('.fe-content .co-pagination li');
         var $column1 = $slider.find('.item-wrapper:nth-child(1) .sl-column'),
             $column2 = $slider.find('.item-wrapper:nth-child(2) .sl-column');
         var timer, index = 0,
             $index = 1;
-        console.log($column1, $column2);
 
         function autoPlay() {
             timer = setInterval(function() {
-                $li.eq($index).addClass('active').siblings().removeClass('active');
-                index += 1;
-                $index = $index + 1;
-                $index > 2 ? $index = 0 : null;
-                $column1.eq($index).addClass('active').siblings().removeClass('active');
-                $column2.eq($index).addClass('active').siblings().removeClass('active');
-
                 $slider.stop().animate({
-                    'left': -4.175 * index + 'rem'
-                }).queue(function(next) {
+                    'left': '-=4.175rem'
+                }, function() {
+                    index += 1;
+                    $index = $index + 1;
+                    $index > 2 ? $index = 0 : null;
                     if (index > 2) {
+                        $slider.css('left', 0);
                         index = 0;
-                        $(this).css('left', 0)
+                    };
+                    switchClass($index);
+                })
 
-                    }
-                    next();
-                });
-            }, 2000);
+
+            }, 3000);
         }
         autoPlay();
+
+        function switchClass(i) {
+            $li.eq(i).addClass('active').siblings().removeClass('active');
+            $column1.eq(i).addClass('active').siblings().removeClass('active');
+            $column2.eq(i).addClass('active').siblings().removeClass('active');
+        }
+        $sliWrapper.mouseenter(function() {
+            clearInterval(timer);
+        }).mouseleave(function() {
+            autoPlay();
+        });
+        $li.click(function() {
+            _index = $(this).index();
+            switchClass(_index);
+            $index = _index;
+            index = _index - 1;
+            $slider.stop().animate({
+                'left': -4.175 * (_index - 1) + 'rem'
+            }).queue(function(next) {
+                if (_index < 1) {
+                    $index = _index = 2;
+                    index = 1;
+                    $(this).css('left', -_index * 4.175 + 'rem');
+
+                }
+                next();
+            });
+        });
     }
 })(jQuery);
